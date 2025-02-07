@@ -44,8 +44,3 @@ source $SCRIPT_DIR/zsh/plugin.zsh
 
 # Starshipプロンプトの初期化
 eval "$(starship init zsh)"
-
-export PROMPT="
-%F{green}[%~]%f <`git config user.name`>
-=> %# "
-RPROMPT='%*'

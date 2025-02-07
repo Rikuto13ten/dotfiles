@@ -9,23 +9,38 @@ alias c='clear'
 function gitimpl() {
   git config --global user.name "noda.r@impl.co.jp"
   git config --global user.email "Rikuto13impl"
-  source ~/.zshrc
+
+  eval "$(ssh-agent -s)"
+  ssh-add ~/.ssh/id_rsa
+
+  git config user.name
+  git config user.email
+
+  ssh -T impl
 }
 
 function gitrg() {
   git config --global user.name "rikuto1367@gmail.com"
   git config --global user.email "Rikuto13ten"
-  source ~/.zshrc
+
+  eval "$(ssh-agent -s)"
+  ssh-add ~/.ssh/id_ed25519
+
+  git config user.name
+  git config user.email
+
+  ssh -T rikuto
 }
 
 function gitrl() {
-  git config --global user.name "rikuto1367@gmail.com"
-  git config --global user.email "Rikuto13ten"
-  source ~/.zshrc
-}
+  git config --local user.name "rikuto1367@gmail.com"
+  git config --local user.email "Rikuto13ten"
 
-function gitstatus() {
+  eval "$(ssh-agent -s)"
+  ssh-add ~/.ssh/id_ed25519
+
   git config user.name
   git config user.email
-  source ~/.zshrc
+
+  ssh -T rikuto
 }
