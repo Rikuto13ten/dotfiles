@@ -5,3 +5,4 @@ my dotfiles
 - wezterm
 - starship
 
+nixとvimを先にpullしておく
