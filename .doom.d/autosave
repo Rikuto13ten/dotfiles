@@ -1,0 +1,10 @@
+;; -*- mode: emacs-lisp; eval: (progn (pp-buffer) (indent-buffer)) -*-
+((def-persp "main"
+            ((def-buffer "todo.org" "/Users/impl/org/todo.org" org-mode)
+             (def-buffer "custom.el" "/Users/impl/.doom.d/custom.el" emacs-lisp-mode)
+             (def-buffer "init.el" "/Users/impl/.doom.d/init.el" emacs-lisp-mode)
+             (def-buffer "config.el" "/Users/impl/.doom.d/config.el" emacs-lisp-mode)
+             (def-buffer "notes.org" "/Users/impl/org/notes.org" org-mode))
+            (def-wconf nil)
+            (def-params nil)
+            nil nil nil))
