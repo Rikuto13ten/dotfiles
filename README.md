@@ -5,4 +5,6 @@ my dotfiles
 - wezterm
 - starship
 
+weztermを最新にしておく
+doomemacsをインストールしておく
 nixとvimを先にpullしておく
