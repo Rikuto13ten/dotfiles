@@ -6,6 +6,18 @@ my dotfiles
 - starship
 
 1. weztermを最新にしておく
-2. doomemacsをインストールしておく
-3. nixとvimを先にpullしておく
-4. その後これをクローン
+2. nixとvimを先にクローンしておく
+3. このリポジトリをクローン
+4. doomemacsをインストールしてお
+
+## Doomemacs のインストール
+```zsh
+brew tap railwaycat/emacsmacport
+brew install emacs-mac --with-modules
+ln -s /usr/local/opt/emacs-mac/Emacs.app /Applications/Emacs.app
+```
+
+```zsh
+git clone https://github.com/hlissner/doom-emacs ~/dotfiles/.emacs.d
+~/dotfiles/.emacs.d/bin/doom install
+```
