@@ -2,7 +2,7 @@
 dotfiles=(.zshrc .wezterm.lua)
 
 # フォルダのリスト
-dotdirs=(.doom.d .emacs.d)
+dotdirs=(.doom.d)
 
 # ファイルのシンボリックリンクを作成
 for file in "${dotfiles[@]}"; do
