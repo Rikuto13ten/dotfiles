@@ -18,6 +18,6 @@ ln -s /usr/local/opt/emacs-mac/Emacs.app /Applications/Emacs.app
 ```
 
 ```zsh
-git clone https://github.com/hlissner/doom-emacs ~/dotfiles/.emacs.d
-~/dotfiles/.emacs.d/bin/doom install
+git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
+~/.emacs.d/bin/doom install
 ```
