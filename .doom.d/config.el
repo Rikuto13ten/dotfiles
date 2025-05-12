@@ -75,3 +75,25 @@
       ;; Neotreeの操作
       :desc "Neotreeでディレクトリを開く" "f e" #'neotree-dir
       :desc "Neotreeの表示切替" "e"   #'neotree-toggle)
+
+(use-package ob-d2
+  :ensure t)
+
+(use-package org
+  :after ob-d2
+  :config
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((d2 . t))))
+
+;; appear
+(setq org-appear-trigger 'manual)
+(add-hook 'org-mode-hook (lambda ()
+                           (add-hook 'evil-insert-state-entry-hook
+                                     #'org-appear-manual-start
+                                     nil
+                                     t)
+                           (add-hook 'evil-insert-state-exit-hook
+                                     #'org-appear-manual-stop
+                                     nil
+                                     t)))

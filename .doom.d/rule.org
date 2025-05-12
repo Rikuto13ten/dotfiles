@@ -1,0 +1,9 @@
+ディレクトリ構成図
+
+- ./
+  - images/
+  - config.el
+  - custom.el
+  - init.el なにも書かない
+  - package.el
+  - rule.org
