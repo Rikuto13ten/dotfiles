@@ -7,5 +7,9 @@ export PATH="/Users/usr/.nix-profile/bin:$PATH"
 # SKK 用
 export PATH="$HOME/yaskkserv2/target/release:$PATH"
 
+<<<<<<< Updated upstream
 # Homebrew のパスを通す
 eval "$(/opt/homebrew/bin/brew shellenv)"
+=======
+export DOOMDIR="$HOME/dotfiles/.doom.d"
+>>>>>>> Stashed changes
