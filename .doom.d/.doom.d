@@ -1,1 +1,0 @@
-/Users/rikuto13ten/dotfiles/.doom.d
