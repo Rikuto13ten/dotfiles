@@ -2,11 +2,7 @@
 dotfiles=(.zshrc .wezterm.lua)
 
 # フォルダのリスト
-<<<<<<< Updated upstream
-dotdirs=(.doom.d)
-=======
 dotdirs=(.emacs.d)
->>>>>>> Stashed changes
 
 # ファイルのシンボリックリンクを作成
 for file in "${dotfiles[@]}"; do
