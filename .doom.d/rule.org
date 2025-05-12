@@ -2,8 +2,11 @@
 
 - ./
   - images/
+  - config/
+    - org-setting.el
+    - keybind.el
   - config.el
   - custom.el
-  - init.el なにも書かない
+  - init.el
   - package.el
   - rule.org

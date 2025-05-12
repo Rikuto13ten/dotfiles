@@ -11,30 +11,10 @@
 (setq display-line-numbers-type t)
 (setq org-directory "~/org/")
 
-;; 見出しごとの、font size と color を設定
-(after! org
-  (setq org-startup-folded t)
-  (set-face-attribute 'org-level-7 nil :weight 'bold :inherit 'default)
-  (set-face-attribute 'org-level-6 nil :inherit 'org-level-7 :foreground "#F6CBE6")
-  (set-face-attribute 'org-level-5 nil :inherit 'org-level-7 :foreground "#E1D4F9")
-  (set-face-attribute 'org-level-4 nil :inherit 'org-level-7 :foreground "#F5ACD3")
-  (set-face-attribute 'org-level-3 nil :inherit 'org-level-7 :height 1.2 :foreground "#C9BEF1") ;\large
-  (set-face-attribute 'org-level-2 nil :inherit 'org-level-7 :height 1.44 :foreground "#B798F1") ;\Large
-  (set-face-attribute 'org-level-1 nil :inherit 'org-level-7 :height 1.728 :foreground "#E883C7") ;\LARGE
- )
-
-;; auto start org-superstar
-;; 見出しのアイコン設定
-(use-package org-bullets
-  :custom (org-bullets-bullet-list '("" "󰎦" "󰎩" "󰎬" "󰎮" "󰎰" "󰎵" "󰎸" "󰎻" "󰎾"))
-  :hook (org-mode . org-bullets-mode))
+(load! "config/org-setting.el")
 
 ;; vim
 (remove-hook 'doom-first-input-hook #'evil-snipe-mode)
-
-(with-eval-after-load 'org
-  (custom-set-faces
-   '(org-tag ((t (:background "#492F64" :foreground "white"))))))
 
 ;; desktop-save-modeの有効化
 (after! desktop
