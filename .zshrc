@@ -44,3 +44,7 @@ source $SCRIPT_DIR/zsh/plugin.zsh
 
 # Starshipプロンプトの初期化
 eval "$(starship init zsh)"
+
+export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
+export PATH="$HOME/.gem/ruby/2.6.0/bin:$PATH"
+export PATH="/usr/local/opt/ruby/bin:$PATH"

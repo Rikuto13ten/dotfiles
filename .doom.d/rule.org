@@ -1,12 +1,21 @@
 ディレクトリ構成図
 
-- ./
-  - images/
-  - config/
-    - org-setting.el
-    - keybind.el
-  - config.el
-  - custom.el
-  - init.el
-  - package.el
-  - rule.org
+#+begin_src sh :results drawer
+tree -N --noreport --dirsfirst | perl -CS -pe 's/\N{NO-BREAK SPACE}/ /g'
+#+end_src
+
+#+RESULTS:
+:results:
+.
+├── config
+│   ├── keymap.el
+│   └── org-setting.el
+├── images
+│   └── output1.png
+├── autosave
+├── config.el
+├── custom.el
+├── init.el
+├── packages.el
+└── rule.org
+:end:
