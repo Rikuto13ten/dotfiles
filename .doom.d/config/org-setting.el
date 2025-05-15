@@ -39,3 +39,49 @@
 (with-eval-after-load 'org
   (custom-set-faces
    '(org-tag ((t (:background "#492F64" :foreground "white"))))))
+
+;; appear
+(use-package! org-appear
+  :hook (org-mode . org-appear-mode)
+  :config
+  (setq org-appear-autoemphasis t
+        org-appear-autolinks t
+        org-appear-autosubmarkers t
+        ;; カーソルがテキスト上にないときでもマーカーを表示する
+        org-appear-trigger 'always)
+
+  ;; すべてのモードでカーソルがある行のマーカーを表示する
+  (defun my/org-appear-show-markers-on-current-line ()
+    "Show all Org emphasis markers on the current line."
+    (when (and org-appear-mode
+               (derived-mode-p 'org-mode))
+      (save-excursion
+        (let ((line-begin (line-beginning-position))
+              (line-end (line-end-position)))
+          ;; 現在の行を走査
+          (goto-char line-begin)
+          (while (< (point) line-end)
+            ;; 強調要素を探す
+            (let ((context (org-element-context)))
+              (when (and context
+                         (memq (org-element-type context)
+                               '(bold italic underline strike-through verbatim code)))
+                ;; 強調マーカーを表示
+                (org-appear--show-entry context)))
+            (forward-char 1))))))
+
+  ;; ポストコマンドフックに追加（カーソル移動後に実行）
+  (add-hook 'org-mode-hook
+            (lambda ()
+              (add-hook 'post-command-hook #'my/org-appear-show-markers-on-current-line nil t))))
+
+;; d2を有効にする
+(use-package ob-d2
+  :ensure t)
+
+(use-package org
+  :after ob-d2
+  :config
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((d2 . t))))

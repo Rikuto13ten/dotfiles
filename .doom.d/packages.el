@@ -56,3 +56,4 @@
 (package! evil-terminal-cursor-changer)
 (package! ob-d2)
 (package! org-appear :recipe (:host github :repo "awth13/org-appear"))
+(package! org-appear)

@@ -1,5 +1,4 @@
 ディレクトリ構成図
-
 #+begin_src sh :results drawer
 tree -N --noreport --dirsfirst | perl -CS -pe 's/\N{NO-BREAK SPACE}/ /g'
 #+end_src
