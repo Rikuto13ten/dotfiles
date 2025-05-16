@@ -1,4 +1,4 @@
-;; 見出しごとの、font size と color を設定
+;;; 見出しごとの、font size と color を設定
 (after! org
   (setq org-startup-folded t)
   (set-face-attribute 'org-level-7 nil :weight 'bold :inherit 'default)
@@ -10,16 +10,15 @@
   (set-face-attribute 'org-level-1 nil :inherit 'org-level-7 :height 1.728 :foreground "#E883C7") ;\LARGE
  )
 
-;; auto start org-superstar
-;; 見出しのアイコン設定
+;;; 見出しのアイコン設定
 (use-package org-bullets
   :custom (org-bullets-bullet-list '("" "󰎦" "󰎩" "󰎬" "󰎮" "󰎰" "󰎵" "󰎸" "󰎻" "󰎾"))
   :hook (org-mode . org-bullets-mode))
 
-;; 強調マーカーを非表示にする(* や /)
+;;; 強調マーカーを非表示にする(* や /)
 (setq org-hide-emphasis-markers t)
 
-;; 斜体用のカスタムフェイスを定義
+;;; 斜体用のカスタムフェイスを定義
 (defface my-org-emphasis-italic
   '((default :inherit italic)
     (((class color) (min-colors 88) (background light))
@@ -27,7 +26,6 @@
     (((class color) (min-colors 88) (background dark))
      :foreground "#26a7ed")) ;; 暗い背景用の緑色
   "Orgモードでの斜体用カスタムフェイス")
-
 (setq org-emphasis-alist
       '(("*" my-org-emphasis-bold)
         ("/" my-org-emphasis-italic)
@@ -36,11 +34,12 @@
         ("~" org-code verbatim)
         ("+" (:strike-through t))))
 
+;;; tag
 (with-eval-after-load 'org
   (custom-set-faces
    '(org-tag ((t (:background "#492F64" :foreground "white"))))))
 
-;; appear
+;;; appear
 (use-package! org-appear
   :hook (org-mode . org-appear-mode)
   :config
@@ -75,10 +74,9 @@
             (lambda ()
               (add-hook 'post-command-hook #'my/org-appear-show-markers-on-current-line nil t))))
 
-;; d2を有効にする
+;;; d2を有効にする
 (use-package ob-d2
   :ensure t)
-
 (use-package org
   :after ob-d2
   :config
