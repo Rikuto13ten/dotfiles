@@ -1,8 +1,6 @@
 # ファイルのリスト
 dotfiles=(.zshrc .wezterm.lua)
 
-# フォルダのリスト
-dotdirs=(.emacs.d)
 
 # ファイルのシンボリックリンクを作成
 for file in "${dotfiles[@]}"; do
