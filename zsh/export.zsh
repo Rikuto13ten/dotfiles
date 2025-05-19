@@ -9,5 +9,3 @@ export PATH="$HOME/yaskkserv2/target/release:$PATH"
 
 # Homebrew のパスを通す
 eval "$(/opt/homebrew/bin/brew shellenv)"
-
-export DOOMDIR="$HOME/dotfiles/.doom.d"
